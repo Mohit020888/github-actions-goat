@@ -23,6 +23,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Debug network settings
+        run: |
+         echo "Environment Variables:"
+         env
+         echo "NPM Config:"
+         npm config list
+
       - name: npm install
         run: |
           cd ./src/exfiltration-demo
